@@ -30,10 +30,21 @@ public class TodoListApp {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(new BorderLayout(0,0));
 
+         JPanel inputPanel = new JPanel();
+         inputPanel.setLayout(new BorderLayout());
+
+
+        // adding label
+        label = new JLabel("Please enter a Task");
+        inputPanel.add(label, BorderLayout.NORTH);
+
         // Task input field
         taskField = new JTextField();
-        frame.getContentPane().add(taskField, BorderLayout.NORTH);
+        inputPanel.add(taskField, BorderLayout.CENTER);
         taskField.setColumns(10);
+
+        // Add the input panel to the north region of the frame
+        frame.getContentPane().add(inputPanel, BorderLayout.NORTH);
 
         // List model to hold the tasks
         taskListModel = new DefaultListModel<>();
